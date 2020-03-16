@@ -1,0 +1,31 @@
+# The Star Seller exercise in algorithmics,
+# written in pseudo-code.                   [23 lines of code]
+
+# Consider this the reference implementation for Star Seller in any language.
+
+function main()
+{
+    declare String  name;
+    declare Integer stars;
+    declare Boolean valid = false;
+
+    while (!valid) {
+        write("What is your name? ");
+        name = readLine();
+        if (strLen(name) > 0)
+            valid = true;
+    }
+    valid = false;
+    writeLine("Hello, %s!" %name);
+    while (!valid) {
+        write("How many stars do you want? ");
+        stars = parseInt(readLine());
+        if (stars >= 0 && stars <= 200)
+            valid = true;
+    }
+    for (i in range(1, stars))
+        write("*");
+    writeLine("\nGoodbye, %s" %name);
+}
+
+# This language is case-sensitive. Probably.
