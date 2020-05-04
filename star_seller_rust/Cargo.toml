@@ -1,0 +1,7 @@
+[package]
+name = "star_seller"
+version = "0.1.0"
+authors = ["Karim Vergnes <thesola10@bobile.fr>"]
+
+[dependencies]
+rprompt = "1.0"
