@@ -1,5 +1,5 @@
-'vim: ft=vb.net
-Imports System
+'vim: ft=vb
+Import System
 
 ''' The Star Seller exercise in algorithmics,
 ''' written in Visual Basic .NET.           [22 lines of code]

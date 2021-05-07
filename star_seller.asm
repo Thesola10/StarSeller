@@ -1,5 +1,5 @@
 ; vim: ft=nasm
-; nasm -f elf64 -o star_seller.o star_seller.asm && ld star_seller.asm
+; nasm -f elf64 -o star_seller.o star_seller.asm && ld star_seller.o
 bits 64
 
 
@@ -45,7 +45,7 @@ prompt:
     ret
 
 
-; int [rax] validname()
+; int [rax] validname(void)
 ; Check if the user name is valid. (first char isn't null)
 validname:
     mov  cx,   [name]
@@ -57,7 +57,7 @@ validname:
     ret
 
 
-; int [rax] validstars()
+; int [rax] validstars(void)
 ; Check if the number of stars is valid. (0 <= n <= 200)
 validstars:
     call atoi
@@ -92,7 +92,7 @@ atoi:
     ret
 
 
-; void starsout()
+; void starsout(void)
 ; Print the required number of stars.
 starsout:
     xor  rcx,   rcx
