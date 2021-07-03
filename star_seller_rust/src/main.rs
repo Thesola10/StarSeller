@@ -48,7 +48,7 @@ fn main()
         // There's no explicit need for match, but this being an example,
         // I find it useful to include it as a reference.
         match stars {
-            0 ... 200 => valid = true,
+            0 ..= 200 => valid = true,
             _         => (),
         }
     }
