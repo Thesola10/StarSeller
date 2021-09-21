@@ -13,16 +13,18 @@
    as a Haskeller...
 *)
 
-let putStars n = Array.fold_left (^) "" (Array.make n "*") ;;
+let putStars : int -> string
+    = fun n -> Array.fold_left (^) "" (Array.make n "*") ;;
 
 (* Infix operators are defined the same as in Haskell *)
-let (<=>) x (a,b) = x >= a && x <= b;;
+let (<=>) : 'a -> 'a * 'a -> bool
+    = fun x (a,b) -> x >= a && x <= b;;
 
 (* In order to be applicative (lazy), a definition needs at least one argument.
    Functions that do not take arguments in OCaML usually take a 'unit', or null
    typed value. *)
-let rec askStars () =   (* OCaML functions aren't recursive by default *)
-                let _ = Printf.printf "%s" "How many stars do you want? " in
+let rec askStars : unit -> int (* OCaML functions aren't recursive by default *)
+    = fun () -> let _ = Printf.printf "%s" "How many stars do you want? " in
                 let result = int_of_string (read_line ()) in
                 match result with
                 | x when x <=> (0,200) -> x
