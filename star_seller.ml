@@ -1,5 +1,5 @@
 (* The Star Seller exercise in algorithmics,
-   written in OCaML.                        [14 lines of code]
+   written in OCaML.                        [16 lines of code]
  *)
 
 (* OCaML is a functional programming language, sure, but it's not pure.
