@@ -15,13 +15,13 @@
         name
     )
 )
-(define (askStars) 
+(define (askStars)
     (define num -1)
     (display "How many stars do you want? ")
-    (set! num 
-      (cond ((string->number (read-line)))
-        (else -1)
-      ))
+    (set! num
+        (cond ((string->number (read-line)))
+            (else -1)
+        ))
     (if (and (>= num 0) (<= num 200))
         num
         (askStars)
