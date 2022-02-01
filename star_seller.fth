@@ -11,7 +11,6 @@ VARIABLE TNAME
 VARIABLE TSTARS
 
 VARIABLE NAMEL
-VARIABLE STARS
 
 \ The comment after the function name in parentheses is a convention.
 \ Before the double hyphens are the values consumed from the stack by our
