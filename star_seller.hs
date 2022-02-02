@@ -44,4 +44,4 @@ main =  do
         putStrLn $ "Goodbye, " ++ name
 
 
--- This language is case-sensitive.
+-- This language is case- and indentation-sensitive.
