@@ -1,4 +1,4 @@
-; This is the Star Seller exercise in algorithmics,
+; The Star Seller exercise in algorithmics,
 ; written in Scheme Lisp.                   [27 lines of code]
 
 ; This particular implementation was designed and tested on GNU Guile,
