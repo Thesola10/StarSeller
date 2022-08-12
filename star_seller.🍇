@@ -1,0 +1,52 @@
+💭 The Star Seller exercise in algorithmics,
+💭 written in Emojicode.                    [27 lines of code]
+
+💭🔜
+Emojicode is one strange fellow. As soon as I learned about it, I knew I wanted
+to implement the Star Seller in it. After all, I did make a LOLCODE version.
+
+It's easiest to code in Emojicode with an input method editor like IBus, which
+has a shortcut for inline emoji search and input. Oh, and on a Hi-DPI display.
+
+Bonus: here's what my terminal looked like while editing this Eldritch horror:
+    https://imgur.com/a/FsMrI9D
+🔚💭
+
+🏁🍇
+    💭 Oh dear, there's three different ways to create a variable
+    👎 ➡️ 🖍🆕 valid     💭 This feeds 👎 (false) into new mutable 'valid'
+    🖍🆕  nstars 🔢      💭 This creates a new mutable 'nstars' with 🔢 type.
+    🆕🔠❗ ➡️ name      💭 This creates an anonymous 🔠 instance then assigns
+                        💭 (creates) constant 'name'.
+                        💭 By the way, 🔠 is a mutable string constructor.
+                        💭 Since constructors (🆕) cannot be assigned to
+                        💭 mutables, we can't use a mutable 🔡. Odd.
+
+    0 ➡️🖍 nstars
+
+    🔁 ❎ valid❗ 🍇
+        👄 🔤What is your name? 🔤❗
+        🆕🔡▶️👂🏼❗️ ➡️nameraw
+        🐻 name nameraw❗
+        📐nameraw❗ ▶️ 0 ➡️🖍 valid  💭 This is a mutable assignment, which is
+                                    💭 distinct from a constant assignment,
+                                    💭 which is just fancy constant declaration
+    🍉
+    😀 🔤Hello, 🧲🔡name❗🧲!🔤❗
+    👎 ➡️🖍 valid
+    🔁 ❎ valid❗ 🍇
+        👄 🔤How many stars do you want? 🔤❗
+        🆕🔡▶️👂🏼❗ ➡️ starsraw
+        🔢 starsraw 10❗ ➡️ nstarsmaybe
+        ↪️ ❎nstarsmaybe🙌 🤷❗🍇
+            🍺nstarsmaybe ➡️🖍 nstars
+            🤜nstars ▶️🙌 0 🤝 nstars ◀️🙌 200🤛  ➡️🖍 valid
+        🍉
+    🍉
+    🔂 i 🆕⏩ 0 nstars❗ 🍇
+        👄 🔤*🔤❗
+    🍉
+    😀 🔤❌nGoodbye, 🧲🔡name❗🧲🔤❗
+🍉
+
+💭 This language is skin-tone-sensitive and gender-insensitive.
