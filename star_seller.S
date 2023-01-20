@@ -50,7 +50,6 @@ _start:     movq    $name,      tgt
             movq    $svalid,    %rbx
             call    prompt              # Ask for number of stars
 
-            #movw    $10,        stars
             call    ptstar              # Print number of stars
 
             movq    $gbye,      %rsi
@@ -109,7 +108,7 @@ svalid:     movq    %rax,       %rcx
             call     atoi
             movq    %rax,       %rcx
             jecxz   0f
-            subq    $200,       %rcx
+            subq    $201,       %rcx
             jecxz   0f
             movq    $0,         %rax
             ret
