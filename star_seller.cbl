@@ -11,32 +11,32 @@
 000100 IDENTIFICATION DIVISION.
 000200  PROGRAM-ID. StarSeller.
 000300 DATA DIVISION.
-        WORKING-STORAGE SECTION.
+000400  WORKING-STORAGE SECTION.
       * I'm sure this type system makes sense somehow. Eh, at least
       * having a type system at all makes it better than Javascript.
-        01 WS-NAME PIC A(20) VALUE IS ' '.
-        01 WS-STAR PIC S9(9) USAGE IS BINARY VALUE IS -1.
-        88 PASS VALUES ARE 0 THRU 200.
+000500  01 WS-NAME PIC A(20) VALUE IS ' '.
+000600  01 WS-STAR PIC S9(9) USAGE IS BINARY VALUE IS -1.
+000700  88 PASS VALUES ARE 0 THRU 200.
 
-       PROCEDURE DIVISION.
-           PERFORM READ-NAME-PARA UNTIL NOT WS-NAME=" ".
-           DISPLAY "Hello, "WS-NAME"!".
-           PERFORM READ-STARS-PARA UNTIL PASS.
-           PERFORM SHOW-STARS-PARA WS-STAR TIMES.
-           DISPLAY "".
+000800 PROCEDURE DIVISION.
+000900     PERFORM READ-NAME-PARA UNTIL NOT WS-NAME=" ".
+001000     DISPLAY "Hello, "WS-NAME"!".
+001100     PERFORM READ-STARS-PARA UNTIL PASS.
+001200     PERFORM SHOW-STARS-PARA WS-STAR TIMES.
+001300     DISPLAY "".
 
-           DISPLAY "Goodbye, "WS-NAME.
-           STOP RUN.
+001400     DISPLAY "Goodbye, "WS-NAME.
+001500     STOP RUN.
 
-           READ-NAME-PARA.
-           DISPLAY "What is your name? " NO ADVANCING.
-           ACCEPT WS-NAME.
+001600     READ-NAME-PARA.
+001700     DISPLAY "What is your name? " NO ADVANCING.
+001800     ACCEPT WS-NAME.
 
-           READ-STARS-PARA.
-           DISPLAY "How many stars do you want? " NO ADVANCING.
-           ACCEPT WS-STAR.
+001900     READ-STARS-PARA.
+002000     DISPLAY "How many stars do you want? " NO ADVANCING.
+002100     ACCEPT WS-STAR.
 
-           SHOW-STARS-PARA.
-           DISPLAY "*" NO ADVANCING.
+002200     SHOW-STARS-PARA.
+002300     DISPLAY "*" NO ADVANCING.
 
       * This language is case-insensitive and indentation-sensitive.
