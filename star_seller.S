@@ -105,7 +105,7 @@ nvalid:     movq    name,       %rcx
 # int %rax svalid(void)
 # Check if the number of stars is valid. (0 <= n <= 200)
 svalid:     movq    %rax,       %rcx
-            call     atoi
+            call    atoi
             movq    %rax,       %rcx
             jecxz   0f
             subq    $201,       %rcx
