@@ -2,7 +2,7 @@
 # as --64 -o star_seller.o star_seller.S && ld star_seller.o
 
 # The Star Seller exercise in algorithmics,
-# written in x86_64 Linux GNU Assembly.     [120 lines of code]
+# written in x86_64 Linux GNU Assembly.     [105 lines of code]
 
 # Assembly language is literally a batch of CPU instructions. It is the purest
 # form of programming, one could argue. However, it comes with a drawback:
@@ -20,6 +20,13 @@ SYS_READ    = 0
 SYS_WRITE   = 1
 SYS_CLOSE   = 3
 
+.macro      print_  ptr, len
+            movq    \ptr,       %rsi
+            movq    \len,       %rdx
+            movq    $SYS_WRITE, %rax
+            syscall
+.endm
+
             # Code
             .text
 
@@ -31,18 +38,9 @@ _start:     movq    $name,      tgt
             movq    $nvalid,    %rbx
             call    prompt              # Ask for user name
 
-            movq    $SYS_WRITE, %rax
-            movq    $hello1,    %rsi
-            movq    $hello1l,   %rdx
-            syscall
-            movq    $name,      %rsi
-            movq    $200,       %rdx
-            movq    $SYS_WRITE, %rax
-            syscall
-            movq    $hello2,    %rsi
-            movq    $hello2l,   %rdx
-            movq    $SYS_WRITE, %rax
-            syscall
+            print_  $hello1,    $hello1l
+            print_  $name,      $200
+            print_  $hello2,    $hello2l
 
             movq    $sstars,    tgt
             movq    $qstars,    msg
@@ -52,18 +50,9 @@ _start:     movq    $name,      tgt
 
             call    ptstar              # Print number of stars
 
-            movq    $gbye,      %rsi
-            movq    $gbyel,     %rdx
-            movq    $SYS_WRITE, %rax
-            syscall
-            movq    $name,      %rsi
-            movq    $200,       %rdx
-            movq    $SYS_WRITE, %rax
-            syscall
-            movq    $newl,      %rsi
-            movq    $1,         %rdx
-            movq    $SYS_WRITE, %rax
-            syscall
+            print_  $gbye,      $gbyel
+            print_  $name,      $200
+            print_  $newl,      $1
 
             movq    $SYS_EXIT,  %rax
             movq    $0,         %rdx
@@ -72,10 +61,7 @@ _start:     movq    $name,      tgt
 
 # void prompt((*void)() valid %rbx)
 # Prompt the user for data, and check for validity.
-prompt:     movq    msg,        %rsi
-            movq    msgl,       %rdx
-            movq    $SYS_WRITE, %rax
-            syscall
+prompt:     print_  msg,        msgl
 
             movq    tgt,        %rsi
             movq    $SYS_READ,  %rax
