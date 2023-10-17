@@ -1,8 +1,9 @@
 # vim: ft=gas
-# as --64 -o star_seller.o star_seller.S && ld star_seller.o
+# as -o star_seller.o star_seller.S && ld star_seller.o
+            .code64
 
 # The Star Seller exercise in algorithmics,
-# written in x86_64 Linux GNU Assembly.     [105 lines of code]
+# written in x86_64 Linux GNU Assembly.     [106 lines of code]
 
 # Assembly language is literally a batch of CPU instructions. It is the purest
 # form of programming, one could argue. However, it comes with a drawback:
