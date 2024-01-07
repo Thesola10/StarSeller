@@ -20,12 +20,11 @@ VARIABLE NAMEL
 : GETSTARS  ( -- n )
     ." How many stars do you want? "
     \ We need this strange manipulation because boolean comparisons consume
-    \ all of their arguments. The first DUP is so we have something left to
-    \ return, the second one is for the "200 <" comparison, and the last one
-    \ is for the "0 >" comparison.
+    \ all of their arguments. The first DUP is for the "200 <" comparison,
+    \ and the second one is for the "0 >" comparison.
     \ Also, since the result of the first comparison is ahead of our duped
     \ number, we need them to swap places, hence the "SWAP".
-    _GETSTARS DUP DUP DUP 0 > SWAP 200 < AND IF CR ELSE DROP CR RECURSE THEN ;
+    _GETSTARS DUP DUP 0 > SWAP 200 < AND IF CR ELSE DROP CR RECURSE THEN ;
 : GETNAME   ( -- )
     ." What is your name? "
     \ A stack-based if block yields some strange syntax. Basically, the "IF"
