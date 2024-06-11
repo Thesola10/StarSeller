@@ -25,7 +25,7 @@ def star_seller():
     print(f"Hello, {name}!")
     while not valid:
         stars = int(input("How many stars do you want? "))
-        if (stars < 200):
+        if (stars <= 200):
             print("*" * stars)
             valid = True
     print(f"Goodbye, {name}")
