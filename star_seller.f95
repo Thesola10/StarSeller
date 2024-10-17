@@ -3,20 +3,20 @@
 
 ! Apparently, FORTRAN is not really free-form. The indentation you see
 ! below is what was defined by Vim's F95 syntax definition. Most other text
-! editors exhibit the same behavior in regards to FORTRAN code.
+! editors exhibit the same behavior with regards to FORTRAN code.
 
       PROGRAM STAR_SELLER
           IMPLICIT NONE
 
           INTEGER       :: s, c
           CHARACTER(20) :: YOURNAME = ' '
-          
-          DO 
+
+          DO
             WRITE (*, *)     'What is your name? '
             READ  (*, '(A)') YOURNAME
             IF (.NOT. YOURNAME == ' ') EXIT
           ENDDO
-          
+
           WRITE (*, *)     'Hello, ', YOURNAME, '!'
           DO
             WRITE (*, *)     'How many stars do you want? '
